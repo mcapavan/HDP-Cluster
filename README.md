@@ -30,3 +30,5 @@ ambari-server start
 ambari-server status
 ```
 Make sure you select Java 8 when you install Ambari
+
+Step 4: Open http://node1:8080 on browser
