@@ -33,6 +33,9 @@ wget http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.20/repos/centos6/HDP-U
 wget http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.3.0.0/HDP-2.3.0.0-centos6-rpm.tar.gz
 wget http://public-repo-1.hortonworks.com/ambari/centos6/ambari-2.1.0-centos6.tar.gz
 
+tar -xvf HDP-UTILS-1.1.0.20-centos6.tar.gz
+tar -xvf HDP-2.3.0.0-centos6-rpm.tar.gz
+tar -xvf ambari-2.1.0-centos6.tar.gz
 
 createrepo /var/www/html/hdp/centos6/HDP-2.3.0.0
 createrepo /var/www/html/hdp/centos6/HDP-UTILS-1.1.0.20

@@ -18,16 +18,15 @@ Step 3: Setting up the Environment
 On Ubuntu:
 ```
 git clone https://github.com/mcapavan/HDP-Cluster.git
-scp HDP-Cluster/files/*.* root@node1:~/
+scp -r HDP-Cluster/* root@node1:~/Downloads/
 ssh node1
-mv *.repo ~/conf
-cd ~/scripts
-chmod 777 *.sh
-mkdir ~/Downloads/repo
-cd ~/Downloads/repo
-wget http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.20/repos/centos6/HDP-UTILS-1.1.0.20-centos6.tar.gz
-wget http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.3.0.0/HDP-2.3.0.0-centos6-rpm.tar.gz
-wget http://public-repo-1.hortonworks.com/ambari/centos6/ambari-2.1.0-centos6.tar.gz
+chmod 777 ~/Downloads/scripts/*
+cp ~/Downloads/scripts/distFile.sh ~/scripts
+~/Downloads/scripts/env_setup.sh
 
-
+yum install ambari-server
+ambari-server setup
+ambari-server start
+ambari-server status
 ```
+Make sure you select Java 8 when you install Ambari
